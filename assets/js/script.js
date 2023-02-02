@@ -43,9 +43,10 @@ var dest_id;
 var hotel_id = [];
 var hotel_name = $(".form").on("submit", function (event) {
   $(event.preventDefault());
+  //selected destination from user
   var selDest = $("#endDest option:selected").text();
   console.log(selDest);
-
+  //1st API call for destination ID
   const dest_ID = {
     method: "GET",
     headers: {
@@ -73,7 +74,8 @@ var hotel_name = $(".form").on("submit", function (event) {
           console.log(`The dest id is: ${dest_id}`);
         }
       }
-      const options = {
+      //2nd API to search sustainable hotel options
+      const searchHotels = {
         method: "GET",
         headers: {
           "X-RapidAPI-Key":
@@ -86,14 +88,13 @@ var hotel_name = $(".form").on("submit", function (event) {
         "https://booking-com.p.rapidapi.com/v2/hotels/search?units=metric&checkin_date=2023-07-15&dest_type=city&dest_id=" +
           dest_id +
           "&checkout_date=2023-07-16&order_by=popularity&filter_by_currency=AED&locale=en-gb&adults_number=2&room_number=1&include_adjacency=true&categories_filter_ids=SustainablePropertyFilter%3A%3A1&children_number=2&children_ages=5%2C0&page_number=0",
-        options
+        searchHotels
       )
         .then((response) => response.json())
 
         .then((response) => {
-          console.log(response);
-
           console.log("Your eco-friendly places to stay:");
+          console.log(response);
         })
         .catch((err) => console.error(err));
     });
