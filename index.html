@@ -9,7 +9,8 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Anton%7CJura&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    
     <title>Eco Travel App</title>
 </head>
 
@@ -57,18 +58,27 @@
                                 <form class="form">
                                     <div class="row mb-2">
                                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                                            <select class="form-control custom-select">
-                                                <option>Destination</option>
+                                            <select class="form-control custom-select destination" id="startDest">
+                                                <option>Start Destination</option>
+                                            </select>
+                                            <hr>
+                                            <select class="form-control custom-select destination" id="endDest">
+                                                <option>End Destination</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                                            <input type="text" class="form-control" name="daterange">
+                                            <input type="text" class="form-control" id="datefilter" name="datefilter" placeholder = "Select Dates" value="" />
+                                            <hr>
+                                            <select class="form-control custom-select transport" id="transport">
+                                                <option>Mode of Trasport</option>
+                                            </select>
                                         </div>
                                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
                                             <input type="text" class="form-control" placeholder="# of People">
                                         </div>
 
                                     </div>
+                                    <hr>
                                     <div class="row align-items-center">
                                         <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                                             <input type="submit" class="btn btn-primary btn-block" value="Search">
@@ -89,9 +99,9 @@
                 <div class="col-lg-5">
                     <!-- Slides Carousel Images -->
                     <div class="slides">
-                        <img src="images/slider-1.jpeg" alt="Image" class="img-fluid active">
-                        <img src="images/slider-2.jpeg" alt="Image" class="img-fluid">
-                        <img src="images/slider-3.jpeg" alt="Image" class="img-fluid">
+                        <img src="./images/slider-1.jpeg" alt="Image" class="img-fluid active">
+                        <img src="./images/slider-2.jpeg" alt="Image" class="img-fluid">
+                        <img src="./images/slider-3.jpeg" alt="Image" class="img-fluid">
                     </div>
 
                 </div>
@@ -102,6 +112,10 @@
 
     <!-- Links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

@@ -32,7 +32,7 @@ body {
 
 #mainNav .navbar-nav>li>a,
 #mainNav .navbar-nav>li>a:focus {
-    color: #222222;
+    color: #fff;
 }
 
 /* Button Search styles*/
@@ -94,6 +94,8 @@ body {
 .hero .slides img {
     position: absolute;
     border-radius: 200px;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     -o-transition: 4s opacity ease;
     transition: 4s opacity ease;

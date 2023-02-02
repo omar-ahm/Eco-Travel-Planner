@@ -19,7 +19,7 @@
 
 ## Screenshots/Wireframe
 
-![Alt text](Screenshot%202023-02-01%20at%2020.45.32.png)
+![Alt text](images/wireframe%20screenshot.png)
 
 ## License
 
