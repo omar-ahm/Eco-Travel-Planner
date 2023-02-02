@@ -27,4 +27,31 @@ var results = $('#results');
 
 // 10. Record the carbon offset in the user's account.
 
+// Images in Hero section automatically are changing every 3 sec //
+ // Get the images in the carousel
+ var images = document.querySelectorAll('.slides img');
+    
+ // Keep track of the current image
+ var currentImage = 0;
+
+ // Change the active image every 3 seconds
+ setInterval(function () {
+     // Remove the active class from the current image
+     images[currentImage].classList.remove('active');
+
+     // Increment the current image
+     currentImage = (currentImage + 1) % images.length;
+
+     // Add the active class to the new image
+     images[currentImage].classList.add('active');
+ }, 3000);
+
+ // To add an auto-typing effect to the text hero section, inside the <h1> tag //
+    new Typed('.typed-words', {
+        strings: ['be adventurous', 'be spontaneous', 'be mindful'],
+        typeSpeed: 70,
+        loop: true,
+    });
+
+
 
