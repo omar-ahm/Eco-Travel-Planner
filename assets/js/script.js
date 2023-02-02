@@ -8,6 +8,7 @@ var numOfTravellers = $('#num-of-travellers-input');
 var carbOffsetProg = $('carbon-Os-Prog-input');
 var results = $('#results');
 
+
 // 2. Use Google Maps API to search for eco-friendly accommodations in the selected location.
 
 // 3. Display a list of accommodations to the user, including trip date, photos, description, price, and reviews.
@@ -25,3 +26,5 @@ var results = $('#results');
 // 9. Accept input from user on the selected carbon offset program.
 
 // 10. Record the carbon offset in the user's account.
+
+
