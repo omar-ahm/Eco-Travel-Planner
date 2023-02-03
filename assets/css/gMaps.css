@@ -1,0 +1,79 @@
+﻿/*styling.css*/
+/*add font family, background image*/
+
+body {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/*Jumbotron*/
+.jumbotron {
+  background-color: transparent;
+  margin: 0;
+  padding: 10px;
+}
+
+.jumbotron h1 {
+  letter-spacing: 2.5px;
+  font-size: 3.5em;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  text-align: center;
+}
+
+/*map*/
+#googleMap {
+  width: 80%;
+  height: 400px;
+  margin: 10px auto;
+}
+
+/*output box*/
+#output {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px auto;
+}
+
+#modeLabel {
+  color: black;
+  margin-left: 30px;
+}
+#mode { 
+  width: 15%;
+  height: 40px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+ }
+
+#transport { 
+  margin-left: 30px;
+ }
+
+ #calSubmit { 
+  margin-left: 30px;
+  margin-bottom: 30px;
+  background-color:#576f53;
+  width: 100px;
+  }
+
+#from, #to {
+  margin: 30px;
+  left: 25%;
+  z-index: 5;
+  width: 25%;
+}
+.alert-info {
+  font-size: 20px;
+  color: #fff;
+  padding: 50px;
+  background-color: #576f53;
+  text-align: left;
+}
+strong {
+  color:bisque;
+  
+}
