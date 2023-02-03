@@ -1,26 +1,50 @@
 # Eco-Travel-Planner
+An app that helps travelers find and book sustainable travel options, including eco-friendly accommodations, public transportation, and showing carbon footprinting Calculator.
 
-## USER STORY:
-- AS A traveler
-- I WANT to see the eco-friendly accommodations AND transport in a specific location
-- SO THAT I can book a place to stay that aligns with my values.
+## Links
 
-## ACCEPTANCE CRITERIA:
-- The user can enter a location, dates, and number of travellers.
-- When the user searches for a location they are presented with a list of eco-friendly accommodations in the selected location.
-- When a user views the accommodations they are presented with:
-- Trip date
-- Including photos, description, price, and reviews
-- The app returns a list of sustainable transportation options, including public transportation, car rentals, and carbon offset programs.
-- The transportation options are sorted by relevance and have detailed information,
-- Including cost, availability, and reviews.
-- The app calculates the carbon emissions from the trip.
-- The user can choose from a list of carbon offset programs to offset their emissions.
+Deployed at :
 
-## Screenshots/Wireframe
 
-![Alt text](images/wireframe%20screenshot.png)
+## Description 
+
+This eco friendly Travel planner .... (will be updated)
+
+## Table of Contents (Optional)
+
+* [Installation]
+* [Usage]
+* [License]
+
+
+## Installation
+
+1. Go To https://github.com/omar-ahm/Eco-Travel-Planner/
+2. Copy the Git clone link using SSH.
+3. In terminal on your local device, clone the repository using Git clone.
+4. Open in Visual Studio.
+
+
+## Usage 
+
+This application is a eco friendly travel app showing sustainable hotels, carbon footprinting Calculator, trails for selected destination which can help to plan trip accordingly.
+
+Screeshot of the Web Page:
+
+
+![screenshot of page](assets/images/.png)
+
+
+## Credits
+
+N/A
+
+# Contributors
+Omar Malik
+Sevda Seyidova
+Omar Ahmad
+
 
 ## License
 
-Please refer to LICENSE
+Please refer to the LICENSE in the repo.
