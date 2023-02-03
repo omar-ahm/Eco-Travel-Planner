@@ -39,6 +39,7 @@ $(document).ready(function () {
 
 // // 3. Display a list of accommodations to the user, including trip date, photos, description, price, and reviews.
 
+
 var dest_id;
 var hotel_id = [];
 var hotel_name = $(".form").on("submit", function (event) {
@@ -139,3 +140,5 @@ var hotel_name = $(".form").on("submit", function (event) {
 //         typeSpeed: 70,
 //         loop: true,
 //     });
+
+
