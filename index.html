@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Anton%7CJura&display=swap" rel="stylesheet" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB17MvUonQsNTAfFvhvC6dxLnP_ojEIqhE&libraries=places"></script>
   <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/gMaps.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <title>Eco Travel App</title>
@@ -18,7 +20,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Eco Travel Planner</a>
+      <a class="navbar-brand js-scroll-trigger position-sticky" id="#top" href="#page-top">Eco Travel Planner</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -27,15 +29,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#start-dest">Stays</a>
+            <a class="nav-link js-scroll-trigger" href="#top">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#destionations">Trails</a>
+            <a class="nav-link js-scroll-trigger" href="#carbonCalc">Carbon FootPrint</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -67,9 +71,7 @@
                       <input type="text" class="form-control" id="datefilter" name="datefilter"
                         placeholder="Select Dates" value="" />
                       <hr />
-                      <select class="form-control custom-select transport" id="transport">
-                        <option>Mode of Trasport</option>
-                      </select>
+
                     </div>
                     <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
                       <input type="text" class="form-control" placeholder="# of People" />
@@ -81,7 +83,11 @@
                       <input type="submit" class="btn btn-primary btn-block" value="Search" />
                     </div>
                     <div class="col-lg-8">
-
+                      <label class="control control--checkbox mt-3">
+                        <span class="caption">Save this search</span>
+                        <input type="checkbox" checked="checked" />
+                        <div class="control__indicator"></div>
+                      </label>
                     </div>
                   </div>
                 </form>
@@ -89,7 +95,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-10 ml-auto mt-5">
           <!-- Slides Carousel Images -->
           <div class="slides">
             <img src="./images/slider-1.jpeg" alt="Image" class="img-fluid active" />
@@ -102,74 +108,121 @@
   </div>
   <!-- End of Hero -->
 
-  <!-- Blog -->
+<!-- Google maps API carbon footprint calculator START-->
 
-  <section class="container-fluid content" id="blog">
-    <h2 class="sectionHeading">Sustainable Travel</h2>
-    <div class="row showsNear">
+<section class="container-fluid content" id="carbonCalc">
+    <h2 class="sectionHeading">Carbon footprint calculator</h2>
+<div class="jumbotron">
+    <div class="container-fluid">
+        
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <!-- start location input-->
+                    <input type="text" id="from" placeholder="Start Location" class="form-control">
+                </div>
+           </div>
+           <div class="form-group">
 
-      <!-- Card 1 -->
-      <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-        <div class="card">
-          <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">10 ways to lower your flying footprint in 2023</h5>
-            <p class="card-text">Here's how best to consider contrails when travelling long-haul — with forecasting from
-              the aviation experts.
-            </p>
-            <a href="https://www.cntraveller.com/article/flying-footprint/" class="btn btn-primary">Click to
-              Read</a>
-          </div>
+            <!-- End location input-->
+                <div class="col-xs-4">
+                    <input type="text" id="to" placeholder="End Location" class="form-control">
+                </div>
+              
+             </div>
+             <!--Mode of transport-->
+             <div class="form-group">
+                <div class="col-xs-4">
+                    <label for="transport" id="modeLabel" class="col-xs-2 control-label">Select mode of transport:</label>
+                    <br>
+                    <select type="text" id="mode" placeholder="Mode of Transport">
+                        <option value="DRIVING">Driving</option>
+                        <option value="WALKING">Walking</option>
+                        <option value="BICYCLING">Bicycling</option>
+                        <option value="TRANSIT">Transit</option>
+                        <option value="PLANE">Plane</option>
+                    </select>
+                </div>
+             </div>   
+        </form>
+<!-- submit for route creation-->
+        <div class="col-xs-offset-2 col-xs-10">
+            <button class="btn btn-info btn-lg" id="calSubmit" onclick="calcRoute();">Go</button>
         </div>
-      </div>
-      <!-- End card 1 -->
-
-      <!-- Card 2 -->
-      <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-        <div class="card">
-          <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Skiing and sustainability go hand in hand</h5>
-            <p class="card-text">Transforming from a military base to a luxe snowsports hotspot, Andermatt has had quite
-              the glow-ups.
-            </p>
-            <a href="https://www.independent.co.uk/travel/sustainable-travel/andermatt-ski-holiday-sustainable-switzerland-b2249971.html/"
-              class="btn btn-primary">Click to read</a>
-          </div>
-        </div>
-      </div>
-      <!-- End card 2 -->
-
-      <!-- Card 3 -->
-      <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
-        <div class="card">
-          <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">These are some of the 'greenest' hotels in Europe</h5>
-            <p class="card-text">The association, which chooses its members based on their sustainability initiatives.
-            </p>
-            <a href="https://www.travelweekly.com/Europe-Travel/Insights/Vegan-and-vegetarian-hotels-in-Europe/"
-              class="btn btn-primary">Click to read</a>
-          </div>
-        </div>
-      </div>
-      <!-- End card 3 -->
-
     </div>
-  </section>
-  <!-- End Work -->
+    <div class="container-fluid">
+        <div id="googleMap">
+
+        </div>
+        <div id="output"></div>
+    </div>
+
+</div>
+</section>
+<!-- Google maps API Carbon footprint calculator END-->
+
+<!-- Blog -->
+
+<section class="container-fluid content" id="blog">
+  <h2 class="sectionHeading">Sustainable Travel</h2>
+  <div class="row showsNear">
+
+    <!-- Card 1 -->
+    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+      <div class="card">
+        <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">10 ways to lower your flying footprint in 2023</h5>
+          <p class="card-text">Here's how best to consider contrails when travelling long-haul — with forecasting from the aviation experts.
+          </p>
+          <a href="https://www.cntraveller.com/article/flying-footprint/" class="btn btn-primary">Click for
+            more</a>
+        </div>
+      </div>
+    </div>
+    <!-- End card 1 -->
+
+    <!-- Card 2 -->
+    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+      <div class="card">
+        <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Skiing and sustainability go hand in hand</h5>
+          <p class="card-text">Transforming from a military base to a luxe snowsports hotspot, Andermatt has had quite the glow-ups.
+          </p>
+          <a href="https://www.independent.co.uk/travel/sustainable-travel/andermatt-ski-holiday-sustainable-switzerland-b2249971.html/" class="btn btn-primary">Click for more</a>
+        </div>
+      </div>
+    </div>
+    <!-- End card 2 -->
+
+    <!-- Card 3 -->
+    <div class="cardContainer col-lg-4 col-md-4 col-sm-12">
+      <div class="card">
+        <img src="images/slider-3.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">These are some of the 'greenest' hotels in Europe</h5>
+          <p class="card-text">The association, which chooses its members based on their sustainability initiatives.
+          </p>
+          <a href="https://www.travelweekly.com/Europe-Travel/Insights/Vegan-and-vegetarian-hotels-in-Europe/" class="btn btn-primary">Click for more</a>
+        </div>
+      </div>
+    </div>
+    <!-- End card 3 -->
+
+  </div>
+</section>
+<!-- End Work -->
 
 
-  <!-- Links -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  <script src="./assets/js/trail.js"></script>
-  <script src="./assets/js/script.js"></script>
+    <!-- Links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/gMaps.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,9 @@ body {
     height: 100%;
     background-color: white;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
@@ -13,6 +16,8 @@ body {
 #mainNav {
     font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     letter-spacing: 1px;
+    background-color:#fff;
+    border-bottom: #000 solid 1px;
 }
 
 #mainNav .navbar-brand {
@@ -29,10 +34,13 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+#mainNav a:hover {
+    opacity: 50%;
+}
 
 #mainNav .navbar-nav>li>a,
 #mainNav .navbar-nav>li>a:focus {
-    color: #fff;
+    color: #000
 }
 
 /* Button Search styles*/
@@ -67,7 +75,7 @@ body {
 .hero {
     padding: 7rem 0 10rem 0;
     background: #576f53;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: 100%
 }
 
@@ -116,6 +124,7 @@ body {
     font-size: 30px;
     font-weight: 700;
     padding-top: 20px;
+    margin-top: 40px;
   }
 
   .showsNear {
