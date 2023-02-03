@@ -20,7 +20,7 @@ body {
     font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: 200;
     letter-spacing: 1px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 #mainNav .navbar-nav>li>a {
@@ -108,13 +108,16 @@ body {
 
 /* blog section */
 .content {
-    padding: 50px;
+    padding: 70px;
   }
-  
-  .sectionHeading {
+
+.sectionHeading {
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 20px;
   }
-  
+
   .showsNear {
     padding: 0px 30px 30px 30px;
   }
