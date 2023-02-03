@@ -106,4 +106,19 @@ body {
     z-index: 1;
 }
 
-
+/* blog section */
+.content {
+    padding: 50px;
+  }
+  
+  .sectionHeading {
+    text-align: center;
+  }
+  
+  .showsNear {
+    padding: 0px 30px 30px 30px;
+  }
+  
+  .cardContainer {
+    text-align: center;
+  }
