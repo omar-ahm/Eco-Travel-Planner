@@ -32,7 +32,7 @@ This application is a eco friendly travel app showing sustainable hotels, carbon
 Screeshot of the Web Page:
 
 
-![screenshot of page](assets/images/.png)
+![Wireframe Screenshot](images/wireframe%20screenshot.png)
 
 
 ## Credits
