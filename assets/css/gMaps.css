@@ -3,7 +3,7 @@
 
 body {
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 
 
@@ -36,6 +36,8 @@ body {
   text-align: center;
   font-size: 2em;
   margin: 20px auto;
+  width: 50%;
+
 }
 
 #modeLabel {
@@ -66,10 +68,10 @@ body {
   z-index: 5;
   width: 25%;
 }
-.alert-info {
+.alert-info {  
   font-size: 20px;
   color: #fff;
-  padding: 50px;
+  padding: 20px;
   background-color: #576f53;
   text-align: left;
 }

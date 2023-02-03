@@ -123,8 +123,8 @@ body {
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    padding-top: 20px;
-    margin-top: 40px;
+    /* padding-top: 20px;
+    margin-top: 40px; */
   }
 
   .showsNear {

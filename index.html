@@ -107,11 +107,11 @@
     </div>
   </div>
   <!-- End of Hero -->
-
+<hr>
 <!-- Google maps API carbon footprint calculator START-->
 
 <section class="container-fluid content" id="carbonCalc">
-    <h2 class="sectionHeading">Carbon footprint calculator</h2>
+    <h2 class="sectionHeading">Carbon Footprint Calculator</h2>
 <div class="jumbotron">
     <div class="container-fluid">
         
@@ -124,11 +124,10 @@
            </div>
            <div class="form-group">
 
-            <!-- End location input-->
+            <!-- End destination location input-->
                 <div class="col-xs-4">
                     <input type="text" id="to" placeholder="End Location" class="form-control">
                 </div>
-              
              </div>
              <!--Mode of transport-->
              <div class="form-group">
@@ -149,12 +148,13 @@
         <div class="col-xs-offset-2 col-xs-10">
             <button class="btn btn-info btn-lg" id="calSubmit" onclick="calcRoute();">Go</button>
         </div>
+        <div id="output"></div>
     </div>
     <div class="container-fluid">
         <div id="googleMap">
 
         </div>
-        <div id="output"></div>
+        
     </div>
 
 </div>
