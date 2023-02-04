@@ -110,14 +110,14 @@
   <br>
 <!-- Google maps API carbon footprint calculator START-->
 
-<section class="container-fluid content " id="carbonCalc">
+<section class="container-fluid content p-md-3" id="carbonCalc">
     <h2 class="sectionHeading">Carbon Footprint Calculator</h2>
 <div class="jumbotron">
     <div class="container-fluid">
-        
+      <div id="output"></div>
         <form class="form-horizontal">
             <div class="form-group">
-                <div class="col-xs-4">
+                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
                     <!-- start location input-->
                     <input type="text" id="from" placeholder="Start Location" class="form-control">
                 </div>
@@ -125,13 +125,13 @@
            <div class="form-group">
 
             <!-- End destination location input-->
-                <div class="col-xs-4">
+                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
                     <input type="text" id="to" placeholder="End Location" class="form-control">
                 </div>
              </div>
              <!--Mode of transport-->
              <div class="form-group">
-                <div class="col-xs-4">
+                <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
                     <label for="transport" id="modeLabel" class="col-xs-2 control-label">Select mode of transport:</label>
                     <br>
                     <select type="text" id="mode" placeholder="Mode of Transport">
@@ -145,8 +145,8 @@
              </div>   
         </form>
 <!-- submit for route creation-->
-        <div class="col-xs-offset-2 col-xs-10">
-            <button class="btn btn-info btn-lg" id="calSubmit" onclick="calcRoute();">Go</button>
+<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
+            <button class="btn btn-info btn-lg" id="calSubmit" onclick="calcRoute();">Submit</button>
         </div>
         <div id="output"></div>
     </div>
