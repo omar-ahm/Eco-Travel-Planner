@@ -1,4 +1,5 @@
-﻿//set map options
+﻿
+//set initial map view 
 let myLatLng = { lat: 51.501, lng: -0.1419 };
 let mapOptions = {
     center: myLatLng,
