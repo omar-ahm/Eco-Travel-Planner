@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+﻿
 // set initial map view
 var myLatLng = { lat: 51.501, lng: -0.1419 };
 var mapOptions = {
@@ -78,4 +78,3 @@ var autocomplete1 = new google.maps.places.Autocomplete(input1[0], options);
 
 var input2 = $("#to");
 var autocomplete2 = new google.maps.places.Autocomplete(input2[0], options);
-})
