@@ -1,28 +1,28 @@
-﻿
-//set initial map view 
-let myLatLng = { lat: 51.501, lng: -0.1419 };
-let mapOptions = {
+﻿$(document).ready(function() {
+// set initial map view
+var myLatLng = { lat: 51.501, lng: -0.1419 };
+var mapOptions = {
     center: myLatLng,
     zoom: 7,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
 //create map
-let map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+var map = new google.maps.Map($("#googleMap")[0], mapOptions);
 //create a DirectionsService object to use the route method and get a result for our request
-let directionsService = new google.maps.DirectionsService();
+var directionsService = new google.maps.DirectionsService();
 //create a DirectionsRenderer object which we will use to display the route
-let directionsDisplay = new google.maps.DirectionsRenderer();
-//bind the DirectionsRenderer to the map
+var directionsDisplay = new google.maps.DirectionsRenderer();
+//Attach the DirectionsRenderer to the map
 directionsDisplay.setMap(map);
 
 //define calcRoute function
 function calcRoute() {
-    let mode = document.getElementById('mode').value;
+    var mode = $("#mode").val();
     //create request
-    let request = {
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
+    var request = {
+        origin: $("#from").val(),
+        destination: $("#to").val(),
         travelMode: google.maps.TravelMode[mode.toUpperCase()],
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
@@ -32,8 +32,8 @@ function calcRoute() {
         if (status == google.maps.DirectionsStatus.OK) {
 
 // Carbon footprint calculation
-        let distance = result.routes[0].legs[0].distance.value / 1000; // convert distance from meters to kilometers
-        let carbonFootprint;
+        var distance = result.routes[0].legs[0].distance.value / 1000; // convert distance from meters to kilometers
+        var carbonFootprint;
             switch (mode) {
                 case "DRIVING":
                     carbonFootprint = distance * 0.3;
@@ -46,12 +46,12 @@ function calcRoute() {
 }
 
             //Get distance and time
-            let output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'><strong>From: </strong>" + document.getElementById("from").value + 
-            ".<br /><strong>To: </strong>" + document.getElementById("to").value + 
+            var output = $("#output");
+            output.html("<div class='alert-info'><strong>From: </strong>" + $("#from").val() + 
+            ".<br /><strong>To: </strong>" + $("#to").val() + 
             ".<br />" + "<strong>Driving" + " " +  "distance: </strong>" + result.routes[0].legs[0].distance.text + 
             ".<br /><strong>Duration: </strong>" + result.routes[0].legs[0].duration.text + 
-            ".<br /><strong>Carbon Footprint: </strong>" + carbonFootprint + " kg of CO2.</div>";
+            ".<br /><strong>Carbon Footprint: </strong>" + carbonFootprint + " kg of CO2.</div>");
 
             //display route
             directionsDisplay.setDirections(result);
@@ -62,19 +62,20 @@ function calcRoute() {
             map.setCenter(myLatLng);
 
             //show error message
-            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+            output.html("<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Unable to generate route</div>");
         }
     });
 
 }
 
 //create autocomplete objects for all inputs
-let options = {
+var options = {
     types: ['(cities)']
-}
+};
 
-let input1 = document.getElementById("from");
-let autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+var input1 = $("#from");
+var autocomplete1 = new google.maps.places.Autocomplete(input1[0], options);
 
-let input2 = document.getElementById("to");
-let autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+var input2 = $("#to");
+var autocomplete2 = new google.maps.places.Autocomplete(input2[0], options);
+})
