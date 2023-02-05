@@ -64,7 +64,7 @@ var hotel_name = $(".form").on("submit", function (event) {
     //5de
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
+      "X-RapidAPI-Key": "",
       "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     },
   };
@@ -94,7 +94,7 @@ var hotel_name = $(".form").on("submit", function (event) {
         // 5de
         headers: {
           "X-RapidAPI-Key":
-            "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
+            "",
           "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
         },
       };
@@ -128,7 +128,7 @@ var hotel_name = $(".form").on("submit", function (event) {
                 headers: {
                   //5de
                   "X-RapidAPI-Key":
-                    "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
+                    "",
                   "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
                 },
               };
