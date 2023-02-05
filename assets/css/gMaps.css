@@ -1,96 +1,18 @@
-﻿/*styling.css*/
-/*add font family, background image*/
-
-body {
-  color: #000;
-  font-family: sans-serif;
-}
-
-
-/*Jumbotron*/
-.jumbotron {
-  background-color: transparent;
+﻿ body {
   margin: 0;
-  padding: 10px;
 }
 
-.jumbotron h1 {
-  letter-spacing: 2.5px;
-  font-size: 3.5em;
-}
-
-.jumbotron h1,
-.jumbotron p {
-  text-align: center;
-}
-
-/*generated google map*/
-#googleMap {
-  width: 80%;
-  height: 400px;
-  margin: 10px auto;
-  border: #000 solid ;
-  border-radius: 20px;
-}
-
-/*display output results*/
-#displayResult {
-  text-align: center;
-  font-size: 2em;
-  margin: 20px auto;
-  width: 70%;
-
-}
-/*Mode of transport*/
-#modeLabel {
-  color: black;
-  margin-left: 30px;
-}
-#mode { 
-  width: 15%;
-  height: 40px;
-  margin-left: 30px;
-  margin-bottom: 10px;
+#map { 
+  width:80%;
  }
-
-#transport { 
-  margin-left: 30px;
- }
-/* route calculation submit button*/
- #calSubmit { 
-  margin-left: 30px;
-  margin-bottom: 30px;
-  background: #1A374D;
-  border-color: #1A374D;
-  width: 200px;
-  border-radius: 20px;
-  }
- #calSubmit:hover { 
-    border-color: #576f53;
-    background: #576f53;
-   }
-
- /* startLoc & endLoc buttons */
-#startLoc, #endLoc {
-  margin: 30px;
-  left: 25%;
-  z-index: 5;
-  width: 40%;
-}
-
-/* display results box */
-.alert-info {  
-  float: right;
-  border-radius: 30px;
-  font-size: 20px;
-  width: 60%;
-  height: 100%;
+#emissions {
+  background-color:#1a374d;
   color: #fff;
+  width: 50%;
+  height: 100%;
+  margin: 0 30px 50px 30px;
   padding: 20px;
-  background-color: #576f53;
-  text-align: left;
-}
-strong {
-  color:bisque;
+  border-radius: 10px;
+
   
 }

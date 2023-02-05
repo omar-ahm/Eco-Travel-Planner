@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Anton%7CJura&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB17MvUonQsNTAfFvhvC6dxLnP_ojEIqhE&libraries=places"
-    ></script>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/gMaps.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
-    />
 
-    <title>Eco Travel App</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Anton%7CJura&display=swap" rel="stylesheet" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/gMaps.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <title>Eco Travel App</title>
+  <script src="./assets/js/gMaps.js" defer></script>
+</head>
 
   <body>
     <!-- Navigation -->
@@ -142,95 +132,31 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-5 col-md-10 ml-auto mt-5">
-            <!-- Slides Carousel Images -->
-            <div class="slides">
-              <img
-                src="./images/slider-1.jpeg"
-                alt="Image"
-                class="img-fluid active"
-              />
-              <img src="./images/slider-2.jpeg" alt="Image" class="img-fluid" />
-              <img src="./images/slider-3.jpeg" alt="Image" class="img-fluid" />
-            </div>
+        </div>
+        <div class="col-lg-5 col-md-10 ml-auto mt-5">
+          <!-- Slides Carousel Images -->
+          <div class="slides">
+            <img src="./images/slider-1.jpeg" alt="Image" class="img-fluid active" />
+            <img src="./images/slider-2.jpeg" alt="Image" class="img-fluid" />
+            <img src="./images/slider-3.jpeg" alt="Image" class="img-fluid" />
           </div>
         </div>
       </div>
     </div>
-    <!-- End of Hero -->
-    <br />
-    <!-- Google maps API carbon footprint calculator START-->
+  </div>
+  <!-- End of Hero -->
+  <br>
 
-    <section class="container-fluid content p-md-3" id="carbonCalc">
-      <h2 class="sectionHeading">Carbon Footprint Calculator</h2>
-      <div class="jumbotron">
-        <div class="container-fluid">
-          <div id="displayResult"></div>
-          <form class="form-horizontal">
-            <div class="form-group">
-              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                <!-- start location input-->
-                <input
-                  type="text"
-                  id="startLoc"
-                  placeholder="Start Location"
-                  class="form-control"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <!-- End destination location input-->
-              <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                <input
-                  type="text"
-                  id="endLoc"
-                  placeholder="End Location"
-                  class="form-control"
-                />
-              </div>
-            </div>
-            <!--Mode of transport-->
-            <div class="form-group">
-              <div class="col-lg-12">
-                <label
-                  for="transport"
-                  id="modeLabel"
-                  class="col-xs-2 control-label"
-                  >Select mode of transport:</label
-                >
-                <br />
-                <select
-                  type="text"
-                  id="mode"
-                  placeholder="Mode of Transport"
-                  class="form-control"
-                >
-                  <option value="DRIVING">Driving</option>
-                  <option value="WALKING">Walking</option>
-                  <option value="BICYCLING">Bicycling</option>
-                  <option value="TRANSIT">Transit</option>
-                </select>
-              </div>
-            </div>
-          </form>
-          <!-- submit for route creation-->
-          <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-            <button
-              class="btn btn-info btn-lg"
-              id="calSubmit"
-              onclick="Route();"
-            >
-              Submit
-            </button>
-          </div>
-          <div id="displayResult"></div>
-        </div>
-        <div class="container-fluid">
-          <div id="googleMap"></div>
-        </div>
-      </div>
-    </section>
-    <!-- Google maps API Carbon footprint calculator END-->
+<!-- MapBox API carbon footprint calculator START-->
+
+<section>
+    <h2 class="sectionHeading">Carbon Footprint Calculator</h2>
+    <br>
+  
+    <div id="emissions"></div>
+        <div id="map" style="width: 100%; height: 500px;"></div>
+</section>
+<!-- MapBox API Carbon footprint calculator END-->
 
     <!-- Blog -->
 
