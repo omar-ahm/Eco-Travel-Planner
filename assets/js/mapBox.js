@@ -37,7 +37,7 @@ var directions = new MapboxDirections({
   var modeSelector = $('<select id="mode-selector">')
     .append('<option value="car">Car</option>')
     .append('<option value="bicycle">Bicycle</option>')
-    .append('<option value="public_transport">Public Transport</option>')
+    .append('<option value="public_transport">Train</option>')
     .append('<option value="walking">Walking</option>');
   mapContainer.append(modeSelector);
 
