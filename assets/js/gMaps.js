@@ -7,28 +7,26 @@ var mapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
-//create map
+//generate the map view
 var map = new google.maps.Map($("#googleMap")[0], mapOptions);
-//create a DirectionsService object to use the route method and get a result for our request
-var directionsService = new google.maps.DirectionsService();
-//create a DirectionsRenderer object which we will use to display the route
-var directionsDisplay = new google.maps.DirectionsRenderer();
+var dirService = new google.maps.DirectionsService();
+var dirDisplay = new google.maps.DirectionsRenderer();
 //Attach the DirectionsRenderer to the map
-directionsDisplay.setMap(map);
+dirDisplay.setMap(map);
 
-//define calcRoute function
-function calcRoute() {
+//define Route function that takes the #to and #from inputs
+function Route() {
     var mode = $("#mode").val();
     //create request
     var request = {
-        origin: $("#from").val(),
-        destination: $("#to").val(),
+        origin: $("#startLoc").val(),
+        destination: $("#endLoc").val(),
         travelMode: google.maps.TravelMode[mode.toUpperCase()],
         unitSystem: google.maps.UnitSystem.IMPERIAL
     }
 
     //pass the request to the route method
-    directionsService.route(request, function (result, status) {
+    dirService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
 // Carbon footprint calculation
@@ -45,20 +43,20 @@ function calcRoute() {
                     carbonFootprint = 0;
 }
 
-            //Get distance and time
-            var output = $("#output");
-            output.html("<div class='alert-info'><strong>From: </strong>" + $("#from").val() + 
-            ".<br /><strong>To: </strong>" + $("#to").val() + 
+            // Generate travel distance and calcualte time then display on page
+            var output = $("#displayResult");
+            output.html("<div class='alert-info'><strong>From: </strong>" + $("#startLoc").val() + 
+            ".<br /><strong>To: </strong>" + $("#endLoc").val() + 
             ".<br />" + "<strong>Driving" + " " +  "distance: </strong>" + result.routes[0].legs[0].distance.text + 
             ".<br /><strong>Duration: </strong>" + result.routes[0].legs[0].duration.text + 
             ".<br /><strong>Carbon Footprint: </strong>" + carbonFootprint + " kg of CO2.</div>");
 
-            //display route
-            directionsDisplay.setDirections(result);
+            // Generate displayed route
+            dirDisplay.setDirections(result);
         } else {
-            //delete route from map
-            directionsDisplay.setDirections({ routes: [] });
-            //center map in London
+            // delete route from map
+            dirDisplay.setDirections({ routes: [] });
+            // center map in London
             map.setCenter(myLatLng);
 
             //show error message
@@ -73,8 +71,8 @@ var options = {
     types: ['(cities)']
 };
 
-var input1 = $("#from");
+var input1 = $("#startLoc");
 var autocomplete1 = new google.maps.places.Autocomplete(input1[0], options);
 
-var input2 = $("#to");
+var input2 = $("#endLoc");
 var autocomplete2 = new google.maps.places.Autocomplete(input2[0], options);

@@ -114,19 +114,19 @@
     <h2 class="sectionHeading">Carbon Footprint Calculator</h2>
 <div class="jumbotron">
     <div class="container-fluid">
-      <div id="output"></div>
+      <div id="displayResult"></div>
         <form class="form-horizontal">
             <div class="form-group">
                 <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
                     <!-- start location input-->
-                    <input type="text" id="from" placeholder="Start Location" class="form-control">
+                    <input type="text" id="startLoc" placeholder="Start Location" class="form-control">
                 </div>
            </div>
            <div class="form-group">
 
             <!-- End destination location input-->
                 <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-                    <input type="text" id="to" placeholder="End Location" class="form-control">
+                    <input type="text" id="endLoc" placeholder="End Location" class="form-control">
                 </div>
              </div>
              <!--Mode of transport-->
@@ -145,9 +145,9 @@
         </form>
 <!-- submit for route creation-->
 <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-            <button class="btn btn-info btn-lg" id="calSubmit" onclick="calcRoute();">Submit</button>
+            <button class="btn btn-info btn-lg" id="calSubmit" onclick="Route();">Submit</button>
         </div>
-        <div id="output"></div>
+        <div id="displayResult"></div>
     </div>
     <div class="container-fluid">
         <div id="googleMap">
