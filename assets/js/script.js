@@ -38,7 +38,6 @@ $(document).ready(function () {
 // // 2. Use Google Maps API to search for eco-friendly accommodations in the selected location.
 
 // // 3. Display a list of accommodations to the user, including trip date, photos, description, price, and reviews.
-
 var dest_id;
 var hotel_id = [];
 var hotel_info = [];
@@ -65,7 +64,7 @@ var hotel_name = $(".form").on("submit", function (event) {
     //5de
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "",
+      "X-RapidAPI-Key": "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
       "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     },
   };
@@ -95,7 +94,7 @@ var hotel_name = $(".form").on("submit", function (event) {
         // 5de
         headers: {
           "X-RapidAPI-Key":
-            "",
+            "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
           "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
         },
       };
@@ -113,7 +112,8 @@ var hotel_name = $(".form").on("submit", function (event) {
           console.log(response2);
           response2.results.forEach(function (i) {
             hotel_id.push(i.id);
-            imageUrl.push(i.photoMainUrl);
+
+            imageUrl.push({ name: i.name, image: i.photoMainUrl });
           });
           console.log(hotel_id);
           console.log(imageUrl);
@@ -128,7 +128,7 @@ var hotel_name = $(".form").on("submit", function (event) {
                 headers: {
                   //5de
                   "X-RapidAPI-Key":
-                    "",
+                    "c4872477eemshaf442cb74059669p1bb3eejsn8b3b994f8f2e",
                   "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
                 },
               };
@@ -151,8 +151,8 @@ var hotel_name = $(".form").on("submit", function (event) {
                         sus_rating:
                           response3.sustainability.sustainability_page.tier,
                         url: response3.url,
-                        image: imageUrl[count],
                       };
+                      console.log(hotelDetails);
                       hotel_info.push(hotelDetails);
                     }
                   })
@@ -161,6 +161,15 @@ var hotel_name = $(".form").on("submit", function (event) {
             }
           }
           Promise.all(fetches).then(function () {
+            for (i = 0; i < imageUrl.length; i++) {
+              hotelName = imageUrl[i].name;
+              hotelImage = imageUrl[i].image;
+              for (j = 0; j < hotel_info.length; j++) {
+                if (hotelName == hotel_info[j].hotel_name) {
+                  hotel_info[j].image = hotelImage;
+                }
+              }
+            }
             console.log(hotel_info);
             renderHTML();
             hotel_id.splice(0, 100000);
