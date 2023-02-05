@@ -1,136 +1,168 @@
 html,
 body {
-    width: 100%;
-    height: 100%;
-    background-color: white;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: "Muli", "Helvetica", "Arial", "sans-serif";
 }
 
 /* Navigation  styles */
 #mainNav {
-    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-    letter-spacing: 1px;
-    background-color:#fff;
-    border-bottom: #000 solid 1px;
+  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
+  letter-spacing: 1px;
+  background-color: #fff;
+  border-bottom: #000 solid 1px;
 }
 
 #mainNav .navbar-brand {
-    color: #fdcc52;
-    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-    font-weight: 200;
-    letter-spacing: 1px;
-    font-size: 30px;
+  color: #fdcc52;
+  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 30px;
 }
 
-#mainNav .navbar-nav>li>a {
-    font-size: 15px;
-    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
-    letter-spacing: 1px;
-    text-transform: uppercase;
+#mainNav .navbar-nav > li > a {
+  font-size: 15px;
+  font-family: "Lato", "Helvetica", "Arial", "sans-serif";
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 #navbarResponsive a:hover {
-    opacity: 50%;
+  opacity: 50%;
 }
 
-#mainNav .navbar-nav>li>a,
-#mainNav .navbar-nav>li>a:focus {
-    color: #000
+#mainNav .navbar-nav > li > a,
+#mainNav .navbar-nav > li > a:focus {
+  color: #000;
 }
 
 /* Button Search styles*/
 .btn {
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 30px;
-    font-size: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  font-size: 14px;
 }
 
 .btn.btn-primary {
-    background: #1A374D;
-    border-color: #1A374D;
+  background: #1a374d;
+  border-color: #1a374d;
 }
 
 .btn.btn-primary:hover {
-    border-color: #576f53;
-    background: #576f53;
+  border-color: #576f53;
+  background: #576f53;
 }
 
 .form {
-    position: relative;
-    border-radius: 10px;
-    padding: 50px;
-    background: white;
+  position: relative;
+  border-radius: 10px;
+  padding: 50px;
+  background: white;
 }
 
 /* Hero Page styles*/
 
 .hero {
-    padding: 7rem 0 10rem 0;
-    background: #576f53;
-    margin-bottom: 20px;
-    width: 100%
+  padding: 7rem 0 10rem 0;
+  background: #576f53;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .hero h1 {
-    color: #ffffff;
-    font-size: 40px;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 .hero .intro-wrap {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .hero .slides {
-    max-width: 800px;
-    left: -90px;
-    z-index: 0;
-    position: relative;
-    border-radius: 150px;
-    height: 608px;
-    margin-bottom: -100px;
+  max-width: 800px;
+  left: -90px;
+  z-index: 0;
+  position: relative;
+  border-radius: 150px;
+  height: 608px;
+  margin-bottom: -100px;
 }
 
 .hero .slides img {
-    position: absolute;
-    border-radius: 200px;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    -o-transition: 4s opacity ease;
-    transition: 4s opacity ease;
+  position: absolute;
+  border-radius: 200px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -o-transition: 4s opacity ease;
+  transition: 4s opacity ease;
 }
 
 .hero .slides img.active {
-    opacity: 1;
-    z-index: 1;
+  opacity: 1;
+  z-index: 1;
 }
 
 /* blog section */
 .content {
-    padding: 70px;
-  }
+  padding: 70px;
+}
 
 .sectionHeading {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    /* padding-top: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  /* padding-top: 20px;
     margin-top: 40px; */
-  }
+}
 
-  .showsNear {
-    padding: 0px 30px 30px 30px;
-  }
-  
-  .cardContainer {
-    text-align: center;
-  }
+.showsNear {
+  padding: 0px 30px 30px 30px;
+}
+
+.cardContainer {
+  text-align: center;
+}
+
+/* Booking.com styles */
+
+.hotel {
+  width: 90% !important;
+}
+
+.hotel-img {
+  height: 200px;
+  width: 200px;
+  aspect-ratio: auto;
+
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  object-fit: cover;
+}
+
+.ts-leaf {
+  height: 16px;
+}
+
+.sus-rating {
+  height: 25px;
+}
+
+.room-desc {
+  margin-top: 20px;
+}
+
+.title {
+  color: #000;
+}
