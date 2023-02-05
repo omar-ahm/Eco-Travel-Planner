@@ -58,11 +58,19 @@ body {
  #calSubmit { 
   margin-left: 30px;
   margin-bottom: 30px;
-  background-color:#576f53;
+  background: #1A374D;
+  border-color: #1A374D;
   width: 200px;
   border-radius: 20px;
   }
-
+ #calSubmit:hover { 
+    border-color: #576f53;
+    background: #576f53;
+   }
+ #googleMap {
+  border: #000 solid ;
+  border-radius: 20px;
+ }
 #from, #to {
   margin: 30px;
   left: 25%;
