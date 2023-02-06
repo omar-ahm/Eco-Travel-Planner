@@ -235,8 +235,41 @@
     <!--Booking.com recommendations-->
     <section class="hotel-rec"></section>
 
-    <!-- End Work -->
+    <!-- End blog -->
 
+    <!--Trail-->
+    <div class="py-5 cta-section" id="input-group">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h2 class="mb-2 text-black">Discover your next hike</h2>
+            <p class="mb-4 lead text-black">Get on the trail with detailed routes and maps</p>
+            <input id="userInput" value="" type="text" class="form-control" placeholder="Enter City" aria-label="Search"
+              aria-describedby="search-addon" />
+            <button id="searchButton" href="#searchResult" type="button" class="input-button btn btn-info"
+              onkeypress="myFunction()">
+              <i class="fas fa-search white"></i>Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- spinner for Trail results-->
+    <div class="spinner-container" id="spinner-container">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+      </div>
+    </div>
+  
+    <!--Map space -->
+    <div class="map-container" id="map-container"> </div>
+    <!-- cards for Trail Results -->
+    <div class="row row-cols-sm-1 row-cols-md-3 row-cols-xl-4 searchResults" id="searchResults"></div>
+
+  
     <!-- Links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
@@ -254,5 +287,10 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/mapBox.js"></script>
+    <script src="./assets/js/trail.js"></script>
+      <!--  the Google Maps API -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANek184qE1iZOIHlPpUs_Nk34G_AA2DT4&libraries=places&callback=initMap" defer></script>
+
+
   </body>
 </html>

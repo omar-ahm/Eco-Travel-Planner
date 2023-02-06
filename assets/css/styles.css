@@ -166,3 +166,88 @@ body {
 .title {
   color: #000;
 }
+
+/*---------------map---------------- */
+.map-container {
+  display: flex;
+  width: 100vw;
+  background-color: white;
+}
+iframe {
+  width: 100vw;
+  min-height: 30vh;
+  max-height: 50vh;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/*--------------cards------------------ */
+.searchResults {
+  display:flex;
+  justify-content: center;
+  background-color: rgba(253, 252, 252, 0.441);
+  margin: 0;
+}
+.card{
+  margin: 1em;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 4px 10px grey;
+  transition: all 300ms ease-in-out;
+}
+.card:hover{
+  box-shadow:0px 20px 50px;
+}
+p {
+  position: relative;
+  font-family: 'Cantarell', sans-serif;
+  color: black;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+p:after{
+  content:"";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+p:hover:after{
+  width: 100%;
+}
+.card-body{
+  font-family: 'Cantarell', sans-serif;
+}
+h2 {
+  font-family: 'Permanent Marker', cursive;
+}
+.card-img-top {
+  width: 100%;
+  height: 25vw;
+  margin-top: 1em;
+  object-fit: cover;
+}
+#details-button:hover{
+  background-color: #f0ad4e;
+  color: white;
+}
+#mapsButton:hover{
+  background-color: #f0ad4e;
+  color: white;
+} 
+
+.cta-section {
+  background-size: cover;
+  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+  width: 100%;
+  height: 80%; 
+  padding-bottom: 20px;
+}
+
+
