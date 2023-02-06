@@ -52,19 +52,19 @@ var directions = new MapboxDirections({
 
   if(haveLocation) {
 
-  // Calculate and display the carbon footprint for the default mode (car)
-  updateCarbonFootprint('car', directions);
+  // Calculate and display the carbon footprint for the selected
+  updateCarbonFootprint(modeSelector.val(), directions);
     }
 }
 
 function updateCarbonFootprint(mode, directions) {
     // Example emissions data per mode
     var emissionsData = {
+      bicycle: 0.0007,  
       car: 0.3,
-      bicycle: 0,
       public_transport: 0.15,
-      walking: 0
-    };
+      walking: 0.0007,
+};
   
     directions.on('route', function(e) {
         // Example distance data for the journey
@@ -85,11 +85,15 @@ function updateCarbonFootprint(mode, directions) {
     var roundedMiles = Math.floor(miles);
     var roundedTravelTime = Math.floor(travelTime);
 
+    
     $('#emissions').html(
         'Emissions: ' + roundedEmissions + ' g CO2' + '<br>' +
         'Miles: ' + roundedMiles + '<br>' +
         'Travel time: ' + roundedTravelTime + ' minutes'
       );
+      $("#emissions").css("background-color", "#1a374d")
+      $("#emissions").css("color", "#fff")
+
       console.log(
         'Emissions: ' + roundedEmissions + ' g CO2' + '\n' +
         'Miles: ' + miles + '\n' +

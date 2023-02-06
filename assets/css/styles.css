@@ -91,7 +91,7 @@ body {
 
 .hero .slides {
   max-width: 800px;
-  left: -90px;
+  /* left: -90px; */
   z-index: 0;
   position: relative;
   border-radius: 150px;
