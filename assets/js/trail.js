@@ -102,7 +102,7 @@ function runSearch() {
                     loading="lazy"
                                 allowfullscreen
                                 src='https://www.google.com/maps/embed/v1/view?key=${apiKey}&center=${mapsButton.value}
-                                &zoom=18
+                                &zoom=12
                                 &maptype=satellite'>
                                 </iframe>`
                             console.log(iframe, 75);
