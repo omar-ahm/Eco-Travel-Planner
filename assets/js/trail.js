@@ -5,7 +5,7 @@ trailApi = "df0bec8614msh80779c66b5b858ap1b8aa9jsn05a4fe08c52a";
 let userInput = document.getElementById('userInput');
 let searchButton = document.getElementById('searchButton');
 let searchResults = document.getElementById('searchResults');
-let spinnerContainer = document.getElementById('spinner-container');
+let progress = document.getElementById('progress');
 let mapsContainer = document.getElementById('maps-container');
 
 // function initMap() {
@@ -34,7 +34,7 @@ userInput.addEventListener('keyup', (e) => {
 
 // Start the function and fetch
 function runSearch() {
-    spinnerContainer.style.display = "block"
+    progress.style.display = "block"
 
     let inputText = userInput.value
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${inputText}&key=${apiKey}`)
@@ -85,7 +85,7 @@ function runSearch() {
                     document.querySelector('#searchResults').insertAdjacentHTML('afterbegin', html);
                     userInput.value = '';
 
-                    spinnerContainer.style.display = "none"
+                    progress.style.display = "none"
                     location.href = '#searchResults'
 
                     let mapsButton = document.querySelectorAll('#mapsButton');
