@@ -19,13 +19,14 @@
   <link rel="stylesheet" href="./assets/css/mapBox.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-  <title>Eco Travel App</title>
+  <title>Eco Travel Planner</title>
   <!--Delete this later
   <script src="./assets/js/gMaps.js" defer></script> -->
 </head>
 
 <body>
   <!-- Navigation -->
+
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger position-sticky" id="#top" href="#page-top">Eco Travel Planner</a>
@@ -114,7 +115,6 @@
     </div>
   </div>
   </div>
-  <!-- End of Hero -->
 
   <!-- Booking.com recommendations -->
 
@@ -158,14 +158,14 @@
           <img src="images/slider-2.jpeg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">
-              Skiing and sustainability go hand in hand
+              Be a More Sustainable Traveler
             </h5>
             <p class="card-text">
-              Transforming from a military base to a luxe snowsports hotspot,
-              Andermatt has had quite the glow-ups.
+              When thinking about how to reduce our individual carbon footprints,
+              the simplest ways to cut back on emissions is to fly less often.
             </p>
-            <a href="https://www.independent.co.uk/travel/sustainable-travel/andermatt-ski-holiday-sustainable-switzerland-b2249971.html/"
-              class="btn btn-primary">Click for more</a>
+            <a href="https://www.nytimes.com/guides/travel/how-to-travel-sustainably" class="btn btn-primary">Click for
+              more</a>
           </div>
         </div>
       </div>
@@ -192,15 +192,13 @@
     </div>
   </section>
 
+  <!--Trail Search-->
 
-  <!-- End blog -->
-
-  <!--Trail-->
   <div class="py-5 cta-section" id="input-group">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h2 class="mb-2 text-black">Discover your next hike</h2>
+          <h2 class="mb-2 text-black">Discover your next hike!</h2>
           <p class="mb-4 lead text-black">Get on the trail with detailed routes and maps</p>
           <input id="userInput" value="" type="text" class="form-control" placeholder="Enter City" aria-label="Search"
             aria-describedby="search-addon" />
@@ -221,12 +219,11 @@
       </div>
     </div>
   </div>
-
+      
   <!--Map space -->
   <div class="map-container" id="map-container"> </div>
-  <!-- cards for Trail Results -->
+  <!-- Cards for Trail Results -->
   <div class="row row-cols-sm-1 row-cols-md-3 row-cols-xl-4 searchResults" id="searchResults"></div>
-
 
   <!-- Links -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -241,7 +238,6 @@
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANek184qE1iZOIHlPpUs_Nk34G_AA2DT4&libraries=places&callback=initMap"
     defer></script>
-
 
 </body>
 

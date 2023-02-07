@@ -1,4 +1,3 @@
-
 // Google Maps and Trail Api Key
 apiKey = "AIzaSyANek184qE1iZOIHlPpUs_Nk34G_AA2DT4";
 trailApi = "df0bec8614msh80779c66b5b858ap1b8aa9jsn05a4fe08c52a";
@@ -77,7 +76,7 @@ function runSearch() {
                   <p>City: ${trailData.city}</p>
                   <p class="difficulty">Difficulty: ${trailData.difficulty}</p>
                   <p class="length">Length: ${trailData.length} miles</p>
-                  <p id="rateMe2"  class="empty-stars">Rating: ${trailData.rating}</p>
+                  <p id="rateMe2" class="empty-stars">Rating: ${trailData.rating}</p>
                   <a href="${trailData.url}" target="_blank" rel="noopener noreferrer" id="details-button" class="details-button btn btn-info mt-1">Detail</a>
                   <button id="mapsButton" class="maps-button btn btn-info mt-1" value="${trailData.lat},${trailData.lon}">Map</button>
                 </div>
