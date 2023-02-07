@@ -38,6 +38,7 @@ $(document).ready(function () {
 // // 2. Use Google Maps API to search for eco-friendly accommodations in the selected location.
 
 // // 3. Display a list of accommodations to the user, including trip date, photos, description, price, and reviews.
+//initialising variables 
 var dest_id;
 var hotel_id = [];
 var hotel_info = [];
@@ -54,11 +55,14 @@ silver = $("<img>")
   .addClass("sus-rating");
 gold = $("<img>").attr("src", "assets/images/Gold.png").addClass("sus-rating");
 
+//adding event listener to the form
 var hotel_name = $(".form").on("submit", function (event) {
   $(event.preventDefault());
   //selected destination from user
+  //get selected uder destination from the form 
   var selDest = $("#endDest option:selected").text();
   console.log(selDest);
+  
   //1st API call for destination ID
   const dest_ID = {
     //5de
@@ -78,7 +82,7 @@ var hotel_name = $(".form").on("submit", function (event) {
     .then((response1) => {
       console.log(response1);
 
-      //for loop to makesure dest_id is for the city searched
+      //for loop to make sure dest_id is for the city searched and not for near by points of interest.
       for (i = 0; i < response1.length; i++) {
         if (
           response1[i].dest_type == "city" &&
@@ -112,16 +116,19 @@ var hotel_name = $(".form").on("submit", function (event) {
           console.log(response2);
           response2.results.forEach(function (i) {
             hotel_id.push(i.id);
-
+            
+            //collecting image urls in array. To be added to the hote_info array after API call 3. 
             imageUrl.push({ name: i.name, image: i.photoMainUrl });
           });
           console.log(hotel_id);
           console.log(imageUrl);
+          //for loop to get hotel info for first 3 hotels. 
           for (i = 0; i < 3; i++) {
             id = hotel_id[i];
             console.log(id);
+            /adding a delay of 1 second before calling API call 3 as restricred to a max of 5 API calls per second. 
             setTimeout(getHotelInfo(id), 1000);
-
+            //funtion to call API call 3 for hotel information
             function getHotelInfo(id) {
               const hotelInfo = {
                 method: "GET",
@@ -132,6 +139,7 @@ var hotel_name = $(".form").on("submit", function (event) {
                   "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
                 },
               };
+              //collecting all promises in array to make function synchronous
               fetches.push(
                 fetch(
                   "https://booking-com.p.rapidapi.com/v2/hotels/details?locale=en-gb&hotel_id=" +
@@ -144,6 +152,7 @@ var hotel_name = $(".form").on("submit", function (event) {
                     console.log(response3);
                     count += 1;
                     console.log(count);
+                    //storing hotel information in hotelDetails object if the hotel is sustainable
                     if (response3.sustainability) {
                       hotelDetails = {
                         hotel_name: response3.hotel_name,
@@ -160,6 +169,7 @@ var hotel_name = $(".form").on("submit", function (event) {
               // .catch((err) => console.error(err));
             }
           }
+          //once all promises have returnes then execute following code to display hotel info on cards
           Promise.all(fetches).then(function () {
             for (i = 0; i < imageUrl.length; i++) {
               hotelName = imageUrl[i].name;
@@ -233,7 +243,7 @@ var hotel_name = $(".form").on("submit", function (event) {
 
         .catch((err) => console.error(err));
     });
-
+  //crate card to display search results in
   hotelSec = $(".hotel-rec");
   hotelSec.empty();
   //following code to add section heading to page.

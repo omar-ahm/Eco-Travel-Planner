@@ -1,14 +1,21 @@
 # Eco-Travel-Planner
-An app that helps travelers find and book sustainable travel options, including eco-friendly accommodations, public transportation, and showing carbon footprinting Calculator.
+Application that helps travelers find sustainable travel options, calculates the estimated carbon emissions generated from their travel itinerary and shows ustainable travel options such as hike and bike trails in searched cities.
 
 ## Links
 
-Deployed at :
+Deployed at: https://omar-ahm.github.io/Eco-Travel-Planner/
 
 
 ## Description 
 
-This eco friendly Travel planner .... (will be updated)
+We created an application to help travelers who are environmentally conscious and want to minimize their carbon footprint. The app helps travelers find and book eco-friendly accommodations and provides information about sustainable travel options such as hike and bike trails in searched cities.
+With the Carbon Footprint Calculator, users can calculate the estimated carbon emissions generated from their travel itinerary and make informed decisions. The app utilizes Bootstrap, DOM, javaScript, Jquery, CSS, and HTML to deliver a user-friendly and visually appealing experience. Below APIs are used in this app:
+
+- Google Maps API
+- mapBox API
+- Booking.com API
+- trailAPI
+
 
 ## Table of Contents (Optional)
 
@@ -24,15 +31,18 @@ This eco friendly Travel planner .... (will be updated)
 3. In terminal on your local device, clone the repository using Git clone.
 4. Open in Visual Studio.
 
-
 ## Usage 
 
-This application is a eco friendly travel app showing sustainable hotels, carbon footprinting Calculator, trails for selected destination which can help to plan trip accordingly.
+To get started with the Eco Travel Planner, simply follow these steps:
 
-Screeshot of the Web Page:
+- Open the web-page in your web browser.
+- Enter the city and dates you wish to travel to in the search bar.
+- Browse through the available eco-friendly accommodations and activities.
+- Use the Carbon Footprint Calculator to estimate the carbon emissions generated from your travel itinerary.
+- Start exploring sustainable travel options from Trail Search.
+- Screeshot of the Web Page:
 
-
-![Wireframe Screenshot](images/wireframe%20screenshot.png)
+![Wireframe Screenshot](images/wireframe20screenshot.png)
 
 
 ## Credits
@@ -40,9 +50,8 @@ Screeshot of the Web Page:
 N/A
 
 # Contributors
-Omar Malik
-Sevda Seyidova
-Omar Ahmad
+
+Omar Malik - https://github.com/omalik92  Sevda Seyidova - https://github.com/Helloseva  Omar-Ahm - https://github.com/omar-ahm
 
 
 ## License
