@@ -16,34 +16,38 @@ body {
 /* Navigation  styles */
 
 #mainNav {
-  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
-  letter-spacing: 1px;
-  background-color: #fff;
-  border-bottom: #000 solid 1px;
+  background-color: #f8f9fa;
 }
 
-#mainNav .navbar-brand {
-  color: #fdcc52;
-  font-family: "Catamaran", "Helvetica", "Arial", "sans-serif";
-  font-weight: 200;
-  letter-spacing: 1px;
-  font-size: 30px;
-}
-
-#mainNav .navbar-nav>li>a {
-  font-size: 15px;
-  font-family: "Lato", "Helvetica", "Arial", "sans-serif";
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-#navbarResponsive a:hover {
-  opacity: 50%;
-}
-
-#mainNav .navbar-nav>li>a,
-#mainNav .navbar-nav>li>a:focus {
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
   color: #000;
+}
+
+.navbar-toggler {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.nav-item {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #576f53;
+}
+
+#navbarResponsive {
+  justify-content: flex-end;
 }
 
 /* Button Search styles*/
@@ -237,4 +241,75 @@ p {
 
 .progress {
   background-color: white;
+}
+
+/* styling for media queries */
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .hero .intro-wrap {
+    text-align: center;
+  }
+
+  .hero .form {
+    margin-top: 50px;
+  }
+
+  .hero .col-lg-7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero .slides {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .hero .intro-wrap {
+    text-align: center;
+  }
+
+  .hero .form {
+    width: 100%;
+  }
+
+  .hero .form .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero .slides {
+    display: none;
+  }
+
 }
