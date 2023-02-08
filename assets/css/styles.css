@@ -135,10 +135,12 @@ body {
 
 .showsNear {
   padding: 0px 30px 30px 30px;
+  
 }
 
 .cardContainer {
   text-align: center;
+  height: 100%;
 }
 
 /* Booking.com styles */
@@ -233,7 +235,8 @@ p {
 .card-img-top {
   width: 100%;
   height: 25vw;
-  margin-top: 1em;
+  border-radius: 10px 10px 0 0 ;
+  /* margin-top: 1em; */
   object-fit: cover;
 }
 
@@ -258,7 +261,12 @@ p {
 .progress {
   background-color: white;
 }
-
+ #searchButton {
+  margin-top: 20px;
+ }
+ .cards {
+  border-radius: 10px;
+ }
 /* styling for media queries */
 
 @media only screen and (max-width: 768px) {
