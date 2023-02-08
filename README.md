@@ -1,5 +1,5 @@
 # Eco-Travel-Planner
-Application that helps travelers find sustainable travel options, calculates the estimated carbon emissions generated from their travel itinerary and shows ustainable travel options such as hike and bike trails in searched cities.
+Application that helps travelers find sustainable travel options, calculates the estimated carbon emissions generated from their travel itinerary and shows sustainable travel options such as hike and bike trails.
 
 ## Links
 
@@ -45,13 +45,11 @@ To get started with the Eco Travel Planner, simply follow these steps:
 ![Wireframe Screenshot](images/wireframe20screenshot.png)
 
 
-## Credits
+## Contributors
 
-N/A
-
-# Contributors
-
-Omar Malik - https://github.com/omalik92  Sevda Seyidova - https://github.com/Helloseva  Omar-Ahm - https://github.com/omar-ahm
+Omar Malik - https://github.com/omalik92  
+Sevda Seyidova - https://github.com/Helloseva  
+Omar Ahmad - https://github.com/omar-ahm
 
 
 ## License

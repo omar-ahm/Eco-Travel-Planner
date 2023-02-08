@@ -69,10 +69,10 @@ function runSearch() {
                         if (trailData.length === '0.0') {
                             trailData.length = 'unknown'
                         }
-                        return `<div class="card" id="searchResults">
-                <img src="${trailData.thumbnail}" class="card-img-top" alt="trail image">
-                <div class="card-body" >
-                  <h5 class="card-title">${trailData.name}</h5>
+                        return `<div class="cards" id="searchResults">
+                <img src="${trailData.thumbnail}" class="cards-img-top" alt="trail image">
+                <div class="cards-body" >
+                  <h5 class="cards-title">${trailData.name}</h5>
                   <p>City: ${trailData.city}</p>
                   <p class="difficulty">Difficulty: ${trailData.difficulty}</p>
                   <p class="length">Length: ${trailData.length} miles</p>
