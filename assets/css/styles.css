@@ -143,6 +143,22 @@ body {
 
 /* Booking.com styles */
 
+.btnSave {
+  font-size: 14px;
+  height: 24.5px;
+  background: #1a374d;
+  border-color: #1a374d;
+}
+
+.btnSave:hover {
+  border-color: #576f53;
+  background: #576f53;
+}
+
+#saved-searches p {
+  white-space: nowrap;
+}
+
 .hotel {
   width: 90% !important;
 }
@@ -311,5 +327,4 @@ p {
   .hero .slides {
     display: none;
   }
-
 }

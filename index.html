@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./assets/css/styles.css" />
   <link rel="stylesheet" href="./assets/css/mapBox.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <script src="https://kit.fontawesome.com/c696cba9dd.js" crossorigin="anonymous"></script>
 
   <title>Eco Travel Planner</title> 
 </head>
@@ -91,9 +92,15 @@
                     <div class="col-lg-8">
                       <label class="control control--checkbox mt-3">
                         <span class="caption">Save this search</span>
-                        <input type="checkbox" checked="checked" />
+                        <input class="save-check" type="checkbox" checked="checked" />
                         <div class="control__indicator"></div>
                       </label>
+                    </div>
+                    <div id="saved-searches" class="col-12 w-100 mt-3 row ml-1">
+                        <h6 class="col-12 pl-0 mt-3">Saved Searches:</h6>
+                        <hr class="col-10 mb-3 mt-1 ml-0"/>
+                        <p class="border col-4">London</p><div style="height: 24.5px" class="border col-1 "><i class=" text-center fa-solid fa-arrow-right fa-1x"></i></div></i><p class="col-4  border d-inline">Paris</p><button type="button" class="col-2 btnSave btn-primary">Go</button>
+                        <p class="border col-4">London</p><div style="height: 24.5px" class="border col-1 "><i class=" text-center fa-solid fa-arrow-right fa-1x"></i></div></i><p class="col-4  border d-inline">Paris</p><button type="button" class="col-2 btnSave btn-primary">Go</button>
                     </div>
                   </div>
                 </form>

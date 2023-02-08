@@ -13,6 +13,8 @@ $(document).ready(function () {
   destinations.forEach(function (destination) {
     select.append("<option>" + destination + "</option>");
   });
+  //-----Caling initialise function for bookings.com---------
+  initSaved();
 
   // Function to create a date filter for the date picker range
   $(function () {
@@ -35,16 +37,32 @@ $(document).ready(function () {
 
 // Pseudocode for Eco Travel App
 
+//--------Part of bookings.com currently--------------
+//function to intialise saved searches
+function initSaved() {
+  //if the local storage is not null then set the value of savedJourneys to what is stored in local storage
+  //render the save buttons to screen
+  if (localStorage.getItem("savedJourneys") != null) {
+    savedJourneys = JSON.parse(localStorage.getItem("savedJourneys"));
+
+    renderSaved(savedJourneys);
+  } else {
+    $("#saved-searches").empty();
+  }
+}
+
 // // 2. Use Google Maps API to search for eco-friendly accommodations in the selected location.
 
 // // 3. Display a list of accommodations to the user, including trip date, photos, description, price, and reviews.
-//initialising variables 
+
+//initialising variables
 var dest_id;
 var hotel_id = [];
 var hotel_info = [];
 var count = -1;
 var fetches = [];
 var imageUrl = [];
+var savedJourneys = [];
 
 //sustainability ratings
 bronze = $("<img>")
@@ -55,20 +73,93 @@ silver = $("<img>")
   .addClass("sus-rating");
 gold = $("<img>").attr("src", "assets/images/Gold.png").addClass("sus-rating");
 
+//function to render saved searches
+function renderSaved(savedJourneys) {
+  var container = $("#saved-searches");
+  container.empty();
+  var header = $("<h6>").addClass("col-12 pl-0 mt-3").text("Saved Searches:");
+  var hr = $("<hr>").addClass("col-10 mb-3 mt-1 ml-0");
+
+  container.append(header, hr);
+
+  for (var i = 0; i < savedJourneys.length; i++) {
+    var from = $("<p>").addClass("border col-4").text(savedJourneys[i].start);
+    var to = $("<p>")
+      .addClass("col-4  border d-inline")
+      .text(savedJourneys[i].end);
+    var arrow = $("<div>")
+      .addClass("border col-1")
+      .css("height", "24.5px")
+      .html("<i class='text-center fa-solid fa-arrow-right fa-1x'></i>");
+    var button = $("<button>")
+      .addClass("col-2 btnSave btn-primary")
+      .text("Go")
+      .attr({
+        type: "button",
+        "data-start": savedJourneys[i].start,
+        "data-end": savedJourneys[i].end,
+      });
+
+    container.append(from, arrow, to, button);
+  }
+}
+
+//adding an event listener to the saved searches buttons to trigger bookings.com api if clicked
+var saved = $("#saved-searches").on("click", function (event) {
+  if ($(event.target).is("button"));
+
+  {
+    start = $(event.target).attr("data-start");
+    selDest = $(event.target).attr("data-end");
+    bookingAPI(start, selDest);
+  }
+});
+
 //adding event listener to the form
 var hotel_name = $(".form").on("submit", function (event) {
   $(event.preventDefault());
-  //selected destination from user
-  //get selected uder destination from the form 
+
+  //get users selected start/destination from the form
+  var start = $("#startDest option:selected").text();
   var selDest = $("#endDest option:selected").text();
+  console.log(start, selDest);
+
+  //save the search to loacal storage if selected
+  saveSearchToLocal(start, selDest);
+  console.log(savedJourneys);
+
+  //render the latest savedJourneys array to the page
+  if (localStorage.getItem("savedJourneys") != null) {
+    savedJourneys = JSON.parse(localStorage.getItem("savedJourneys"));
+
+    renderSaved(savedJourneys);
+  }
+  //call booking api to search for avaiable sustainable hotels in the users destination
+  bookingAPI(start, selDest);
+});
+
+//function to save the users search to local storage if save checked
+function saveSearchToLocal(start, selDest) {
+  const cb = document.querySelector(".save-check");
+  if (cb.checked == true) {
+    console.log("checked");
+    journey = { start: start, end: selDest };
+    savedJourneys.push(journey);
+    localStorage.setItem("savedJourneys", JSON.stringify(savedJourneys));
+  }
+}
+
+//function to call booking API and render results to the screen
+function bookingAPI(start, selDest) {
+  console.log(start);
   console.log(selDest);
-  
+
   //1st API call for destination ID
   const dest_ID = {
     //5de
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "",
+      "X-RapidAPI-Key": "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
       "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     },
   };
@@ -98,7 +189,7 @@ var hotel_name = $(".form").on("submit", function (event) {
         // 5de
         headers: {
           "X-RapidAPI-Key":
-            "",
+            "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
           "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
         },
       };
@@ -106,7 +197,7 @@ var hotel_name = $(".form").on("submit", function (event) {
       fetch(
         "https://booking-com.p.rapidapi.com/v2/hotels/search?units=metric&checkin_date=2023-07-15&dest_type=city&dest_id=" +
           dest_id +
-          "&checkout_date=2023-07-16&order_by=popularity&filter_by_currency=AED&locale=en-gb&adults_number=2&room_number=1&include_adjacency=true&nflt=SustainablePropertyFilter%3D1",
+          "&checkout_date=2023-07-20&order_by=popularity&filter_by_currency=AED&locale=en-gb&adults_number=2&room_number=1&include_adjacency=true&nflt=SustainablePropertyFilter%3D1",
         searchHotels
       )
         .then((response2) => response2.json())
@@ -116,17 +207,17 @@ var hotel_name = $(".form").on("submit", function (event) {
           console.log(response2);
           response2.results.forEach(function (i) {
             hotel_id.push(i.id);
-            
-            //collecting image urls in array. To be added to the hote_info array after API call 3. 
+
+            //collecting image urls in array. To be added to the hote_info array after API call 3.
             imageUrl.push({ name: i.name, image: i.photoMainUrl });
           });
           console.log(hotel_id);
           console.log(imageUrl);
-          //for loop to get hotel info for first 3 hotels. 
+          //for loop to get hotel info for first 3 hotels.
           for (i = 0; i < 3; i++) {
             id = hotel_id[i];
             console.log(id);
-            /adding a delay of 1 second before calling API call 3 as restricred to a max of 5 API calls per second. 
+            //adding a delay of 1 second before calling API call 3 as restricred to a max of 5 API calls per second.
             setTimeout(getHotelInfo(id), 1000);
             //funtion to call API call 3 for hotel information
             function getHotelInfo(id) {
@@ -135,7 +226,7 @@ var hotel_name = $(".form").on("submit", function (event) {
                 headers: {
                   //5de
                   "X-RapidAPI-Key":
-                    "",
+                    "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
                   "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
                 },
               };
@@ -243,7 +334,7 @@ var hotel_name = $(".form").on("submit", function (event) {
 
         .catch((err) => console.error(err));
     });
-  //crate card to display search results in
+  //create card to display search results in
   hotelSec = $(".hotel-rec");
   hotelSec.empty();
   //following code to add section heading to page.
@@ -271,7 +362,7 @@ var hotel_name = $(".form").on("submit", function (event) {
   mainCard.append(mainCardHead, mainCardBody);
   bsGrid1col.append(mainCard);
   hotelSec.append(bsGrid1);
-});
+}
 
 // // 4. Use API or data source to retrieve information on sustainable transportation options (public transportation, car rentals, carbon offset programs).
 
