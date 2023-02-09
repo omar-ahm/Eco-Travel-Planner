@@ -1,4 +1,4 @@
-# Eco-Travel-Planner
+# Eco-Explorer
 Application that helps travelers find sustainable travel options, calculates the estimated carbon emissions generated from their travel itinerary and shows sustainable travel options such as hike and bike trails.
 
 ## Links
@@ -33,7 +33,7 @@ With the Carbon Footprint Calculator, users can calculate the estimated carbon e
 
 ## Usage 
 
-To get started with the Eco Travel Planner, simply follow these steps:
+To get started with the Eco Explorer (travel planner), simply follow these steps:
 
 - Open the web-page in your web browser.
 - Enter the city and dates you wish to travel to in the search bar.
