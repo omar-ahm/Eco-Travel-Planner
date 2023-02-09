@@ -142,6 +142,7 @@ body {
 .cardContainer {
   text-align: center;
   height: 100%;
+  
 }
 
 /* Booking.com styles */
@@ -201,10 +202,14 @@ body {
 }
 
 iframe {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  min-height: 30vh;
+  max-height: 50vh;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
-
 /* Cards styles for Trail Search results*/
 
 .searchResults {
@@ -220,6 +225,7 @@ iframe {
   border-radius: 0;
   box-shadow: 0px 4px 10px grey;
   transition: all 300ms ease-in-out;
+  
 }
 
 .cards:hover {
@@ -236,11 +242,15 @@ p {
 .card-img-top {
   width: 100%;
   height: 25vw;
-  border-radius: 10px 10px 0 0 ;
-  /* margin-top: 1em; */
+  margin-top: 1em; 
   object-fit: cover;
 }
 
+
+
+.cards:hover {
+box-shadow: 0px 20px 50px;
+}
 .cta-section {
   background-size: cover;
   background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
@@ -268,6 +278,20 @@ p {
  .cards {
   border-radius: 10px;
  }
+
+ .spinner-container {
+  display: none;
+  z-index: 5;
+  color: #f0ad4e;
+}
+.d-flex {
+  display: flex;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 35%;
+  max-width: 50%;
+  min-width: 30%;
+  z-index: inherit;
 /* styling for media queries */
 
 @media only screen and (max-width: 768px) {
