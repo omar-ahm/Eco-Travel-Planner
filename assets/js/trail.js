@@ -70,7 +70,7 @@ function runSearch() {
                             trailData.length = 'unknown'
                         }
                         return `<div class="cards" id="searchResults">
-                <img src="${trailData.thumbnail}" class="cards-img-top" alt="trail image">
+                <img src="${trailData.thumbnail}" class="card-img-top" alt="trail image">
                 <div class="cards-body" >
                   <h5 class="cards-title">${trailData.name}</h5>
                   <p>City: ${trailData.city}</p>

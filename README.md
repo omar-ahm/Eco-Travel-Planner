@@ -42,7 +42,13 @@ To get started with the Eco Travel Planner, simply follow these steps:
 - Start exploring sustainable travel options from Trail Search.
 - Screeshot of the Web Page:
 
-![Wireframe Screenshot](images/wireframe20screenshot.png)
+![App Screenshot](images/Screenshot1.png)
+![App Screenshot](images/Screenshot2.png)
+![App Screenshot](images/Screenshot3.png)
+![App Screenshot](images/Screenshot4.png)
+![App Screenshot](images/Screenshot5.png)
+![App Screenshot](images/Screenshot6.png)
+
 
 
 ## Contributors
