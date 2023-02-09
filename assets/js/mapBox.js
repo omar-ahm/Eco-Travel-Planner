@@ -46,7 +46,7 @@ var directions = new MapboxDirections({
     var mode = $(this).val();
     updateCarbonFootprint(mode, directions);
   });
-   
+  
   // Add the Mapbox Directions contro
   map.addControl(directions, 'top-left');
 
@@ -65,7 +65,7 @@ function updateCarbonFootprint(mode, directions) {
       public_transport: 0.15,
       walking: 0.0007,
 };
-  
+console.log(mode)
     directions.on('route', function(e) {
         // Example distance data for the journey
         var route = e.route;
@@ -84,7 +84,7 @@ function updateCarbonFootprint(mode, directions) {
     var roundedEmissions = Math.floor(emissions);
     var roundedMiles = Math.floor(miles);
     var roundedTravelTime = Math.floor(travelTime);
-
+console.log(route)
     
     $('#emissions').html(
         'Emissions: ' + roundedEmissions + ' g CO2' + '<br>' +
