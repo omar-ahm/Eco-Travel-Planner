@@ -159,7 +159,7 @@ function bookingAPI(start, selDest) {
     //5de
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
+      "X-RapidAPI-Key": "56fa6b5c88msh5ce07e85dea403ap1a7453jsnd56927bebefc",
       "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
     },
   };
@@ -189,7 +189,7 @@ function bookingAPI(start, selDest) {
         // 5de
         headers: {
           "X-RapidAPI-Key":
-            "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
+            "56fa6b5c88msh5ce07e85dea403ap1a7453jsnd56927bebefc",
           "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
         },
       };
@@ -226,7 +226,7 @@ function bookingAPI(start, selDest) {
                 headers: {
                   //5de
                   "X-RapidAPI-Key":
-                    "5dfc1546bcmshbc2075081d40e4ep10f7c3jsnfcfd8625d60e",
+                    "56fa6b5c88msh5ce07e85dea403ap1a7453jsnd56927bebefc",
                   "X-RapidAPI-Host": "booking-com.p.rapidapi.com",
                 },
               };
